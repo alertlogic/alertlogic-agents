@@ -1,0 +1,28 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: puppet_apply
+  manifests_path: manifests
+  modules_path: modules
+  hiera_data_path: hieradata
+
+platforms:
+  - name: ubuntu-12.04
+  - name: ubuntu-14.04
+  - name: centos-6.4
+  - name: centos-7.0
+  - name: debian-7.8
+  - name: fedora-19
+  - name: windows-2012r2
+    driver:
+      gui: true
+      box: opentable/win-2012r2-standard-amd64-nocm
+      customize:
+        vram: 64
+
+suites:
+  - name: default
+    manifest: site.pp
+
