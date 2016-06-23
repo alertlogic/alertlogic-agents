@@ -17,9 +17,9 @@ group :development, :unit_tests do
   gem 'puppet-blacksmith',         :require => false
   gem 'puppetlabs_spec_helper',    :require => false
   gem 'rspec-puppet', '>= 2.3.2',  :require => false
-  gem 'rspec-puppet-facts',         :require => false
+  gem 'rspec-puppet-facts',        :require => false
   gem 'simplecov',                 :require => false
-  gem 'mixlib-shellout',            :require => false
+  gem 'mixlib-shellout',           :require => false
 end
 group :system_tests do
   gem 'beaker-rspec',                  *location_for(ENV['BEAKER_RSPEC_VERSION'] || '>= 3.4')
@@ -37,4 +37,3 @@ gem 'puppet', *location_for(ENV['PUPPET_GEM_VERSION'])
 if File.exists? "#{__FILE__}.local"
   eval(File.read("#{__FILE__}.local"), binding)
 end
-gem "kitchen-vagrant"
