@@ -32,9 +32,6 @@ end
 
 gem 'facter', *location_for(ENV['FACTER_GEM_VERSION'])
 gem 'puppet', *location_for(ENV['PUPPET_GEM_VERSION'])
-gem 'librarian-puppet'
-gem 'test-kitchen'
-gem 'kitchen-puppet'
 
 
 if File.exists? "#{__FILE__}.local"
