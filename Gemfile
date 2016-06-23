@@ -18,6 +18,7 @@ group :development, :unit_tests do
   gem 'puppetlabs_spec_helper',    :require => false
   gem 'rspec-puppet', '>= 2.3.2',  :require => false
   gem 'rspec-puppet-facts',        :require => false
+  gem 'rspec-rails',               :require => false
   gem 'simplecov',                 :require => false
   gem 'mixlib-shellout',           :require => false
 end
