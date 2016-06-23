@@ -1,0 +1,78 @@
+{
+  "name": "alertlogic-al_agents",
+  "version": "0.1.0",
+  "author": "alertlogic",
+  "summary": "Alert Logic Agent Puppet Module",
+  "license": "Apache-2.0",
+  "source": "https://github.com/alertlogic/alertlogic-al-agents",
+  "project_page": "https://github.com/alertlogic/alertlogic-al-agents",
+  "issues_url": "https://github.com/alertlogic/alertlogic-al-agents/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"puppetlabs-powershell","version_requirement": ">=2.0.1"},
+    {"name":"jfryman-selinux","version_requirement": ">=0.4.0"},
+    {"name":"ghoneycutt-rsyslog","version_requirement": ">=0.24.1"}
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04",
+        "16.04"
+      ]
+    },
+    {
+      "operatingsystem": "Windows",
+      "operatingsystemrelease": [
+        "Server 2008",
+        "Server 2008 R2",
+        "Server 2012",
+        "Server 2012 R2",
+        "7",
+        "8",
+        "10"
+      ]
+    }
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": ">=3.7.2 <4.0.0"
+    }
+  ]
+}
+
