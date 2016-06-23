@@ -2,7 +2,7 @@ sudo: required
 language: ruby
 bundler_args: "--without system_tests"
 script:
-- bundle exec rake spec
+- rake spec
 rvm:
 - 2.2.2
 gemfile:

@@ -1,5 +1,5 @@
 require 'spec_helper'
-
+puts Rails.env
 describe 'al_agents', :type => 'class' do
 
   context 'excpect compilation on Debian' do
