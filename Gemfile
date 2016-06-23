@@ -21,6 +21,14 @@ group :development, :unit_tests do
   gem 'simplecov',                 :require => false
   gem 'mixlib-shellout',           :require => false
 end
+group :system_tests do
+  gem 'beaker-rspec',                  *location_for(ENV['BEAKER_RSPEC_VERSION'] || '>= 3.4')
+  gem 'beaker',                        *location_for(ENV['BEAKER_VERSION'])
+  gem 'serverspec',                    :require => false
+  gem 'beaker-puppet_install_helper',  :require => false
+  gem 'master_manipulator',            :require => false
+  gem 'beaker-hostgenerator',          *location_for(ENV['BEAKER_HOSTGENERATOR_VERSION'])
+end
 
 gem 'facter', *location_for(ENV['FACTER_GEM_VERSION'])
 gem 'puppet', *location_for(ENV['PUPPET_GEM_VERSION'])
