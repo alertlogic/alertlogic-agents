@@ -1,14 +1,13 @@
 pkg/
 Gemfile.lock
+Puppetfile.lock
+chefignore
 .bundle/
 .rspec_system/
 .*.sw*
 /spec/fixtures/.librarian
 /spec/fixtures/.tmp
 /spec/fixtures/Puppetfile.lock
-/spec/fixtures/modules
-/spec/fixtures/manifests
-/spec/fixtures/vendor
 .kitchen/
 .kitchen.local.yml
 .librarian/
