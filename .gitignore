@@ -1,5 +1,7 @@
 pkg/
 Gemfile.lock
+Puppetfile.lock
+chefignore
 .bundle/
 .rspec_system/
 .*.sw*
