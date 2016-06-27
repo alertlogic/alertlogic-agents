@@ -1,12 +1,12 @@
 {
-  "name": "alertlogic-al_agents",
+  "name": "alertlogic-agents",
   "version": "0.1.0",
   "author": "alertlogic",
   "summary": "Alert Logic Agent Puppet Module",
   "license": "Apache-2.0",
-  "source": "https://github.com/alertlogic/alertlogic-al-agents",
-  "project_page": "https://github.com/alertlogic/alertlogic-al-agents",
-  "issues_url": "https://github.com/alertlogic/alertlogic-al-agents/issues",
+  "source": "https://github.com/alertlogic/alertlogic-agents",
+  "project_page": "https://github.com/alertlogic/alertlogic-agents",
+  "issues_url": "https://github.com/alertlogic/alertlogic-agents/issues",
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
     {"name":"puppetlabs-powershell","version_requirement": ">=2.0.1"},
