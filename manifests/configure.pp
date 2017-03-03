@@ -8,6 +8,7 @@ class al_agents::configure inherits al_agents {
     $configure = "/etc/init.d/al-agent configure --host ${al_agents::egress_url} --port ${al_agents::egress_port} --proxy ${al_agents::proxy_url}"
   }
   exec {'configuration':
-    command => $configure
+    command => $configure,
+    creates => '/var/alertlogic/lib/agent/etc/controller_host'
   }
 }
