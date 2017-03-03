@@ -1,14 +1,18 @@
 class al_agents::linux inherits al_agents {
 
-  if $al_agents::syslogng_detected {
+  if $syslog_type == 'none' {
+    info("no syslog detected skipping syslog configuration for AL Agent")
+  }
+
+  if $syslog_type == 'syslog-ng' {
     class { '::al_agents::syslogng': }
   }
 
-  if $al_agents::rsyslog_detected {
+  if $syslog_type == 'rsyslog' {
     class { '::al_agents::rsyslog': }
   }
 
-  if $al_agents::for_imaging == false {
+  if $al_agents::for_imaging == 'false' {
     anchor { 'al_agents::linux::begin': } ->
     class { '::al_agents::install': } ->
     class { '::al_agents::configure': } ->
