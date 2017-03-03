@@ -1,15 +1,13 @@
 class al_agents::rsyslog inherits al_agents {
-
-  include 'rsyslog'
-
-  service { 'rsyslog':
-    ensure  => 'running',
-    enable  => true,
-    require => Package['rsyslog'],
+  if ! defined(Package['rsyslog']) {
+    service { 'rsyslog':
+      ensure  => 'running',
+      enable  => true,
+    }
   }
 
   file { '/etc/rsyslog.d/alertlogic.conf':
-    content => template('rsyslog/alertlogic.conf.erb'),
+    content => template('al_agents/rsyslog/alertlogic.conf.erb'),
     notify  => Service['rsyslog'],
     owner   => root,
     group   => root,
