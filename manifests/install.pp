@@ -5,7 +5,8 @@ class al_agents::install inherits al_agents {
   $pkg_url = $al_agents::al_agent_package
 
   exec {'download':
-    command => "/usr/bin/wget -O ${package_path} ${pkg_url}"
+    command => "/usr/bin/wget -O ${package_path} ${pkg_url}",
+    creates => $package_path
   }
 
   case $::operatingsystem {
@@ -21,10 +22,9 @@ class al_agents::install inherits al_agents {
   }
 
   package {'al-agent':
-    ensure   => installed,
-    name     => $al_agents::al_agent_service,
+    ensure     => installed,
+    name      => $al_agents::al_agent_service,
     provider => $provider,
-    source   => $package_path,
+    source  => $package_path,
   }
-
 }
