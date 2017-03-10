@@ -16,19 +16,33 @@ class al_agents::params {
   $egress_url       = 'vaporator.alertlogic.com'
   $egress_port      = 443
   $service_ensure   = 'running'
-  $syslogng_detected = syslogng_detected()
-  $rsyslog_detected = rsyslog_detected()
   $proxy_url        = undef
-  $for_imaging      = undef
+  $for_imaging      = 'false'
+  $override_syslog_source = undef
+
   case $::operatingsystem {
     'Centos', 'Redhat', 'Fedora', 'Scientific': {
       $al_agent_service = 'al-agent'
-      if $::operatingsystemrelease >= 6 {
-          $source_log = 's_all'
+      
+      if versioncmp( $::facterversion, '3') >= 0 {
+          $operatingsystem_version = $::os[release][major]
       }
       else {
-          $source_log = 's_sys'
+          $operatingsystem_version = $::operatingsystemmajrelease
       }
+
+      if $override_syslog_source != undef {
+        $source_log = $override_syslog_source
+      }
+      else {
+      	if versioncmp( $operatingsystem_version, '6') >= 0 {
+          $source_log = 's_all'
+      	}
+      	else {
+          $source_log = 's_sys'
+      	}
+      }
+
       case $::architecture {
         'x86_64', 'amd64': {
           $al_agent_package = 'https://scc.alertlogic.net/software/al-agent-LATEST-1.x86_64.rpm'
